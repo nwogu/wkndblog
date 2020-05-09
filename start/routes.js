@@ -17,6 +17,8 @@
 const Route = use('Route')
 
 Route.on('/').render('welcome')
+Route.on('/privacy').render('privacy')
+Route.on('/terms').render('terms')
 
 Route.group(() => {
     Route.post('login', 'AuthController.login')
