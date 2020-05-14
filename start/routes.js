@@ -20,6 +20,6 @@ Route.on('/').render('welcome')
 Route.on('/privacy').render('privacy')
 Route.on('/terms').render('terms')
 
-Route.group(() => {
-    Route.post('login', 'AuthController.login')
-}).prefix('api/v1/auth').formats(['json'])
+Route.get('/auth/:provider', 'AuthController.redirectToProvider').as('social.login')
+Route.get('/authenticated/:provider', 'AuthController.handleProviderCallback').as('social.login.callback')
+Route.get('/logout', 'AuthController.logout').as('logout')

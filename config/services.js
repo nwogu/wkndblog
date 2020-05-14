@@ -103,7 +103,8 @@ module.exports = {
      */
     twitter: {
       clientId: Env.get('TWITTER_ID'),
-      clientSecret: Env.get('TWITTER_SECRET')
+      clientSecret: Env.get('TWITTER_SECRET'),
+      redirectUri: `${Env.get('APP_URL')}/authenticated/twitter`
     }
   }
 }
